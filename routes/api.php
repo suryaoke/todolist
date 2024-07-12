@@ -27,6 +27,7 @@ Route::group(["midleware" => ["auth:api"]], function () {
     Route::put('checklists/{checklist}/items/{item}/toggle', [ItemController::class, 'toggleCompletion']);
     Route::delete('checklists/{checklist}/items/{item}', [ItemController::class, 'delete']);
 
+    Route::get('checklists', [ChecklistController::class, 'index']);
     Route::post('checklists/store', [ChecklistController::class, 'store']);
     Route::delete('checklists/{id}', [ChecklistController::class, 'delete']);
     Route::get('checklists/{id}', [ChecklistController::class, 'show']);
